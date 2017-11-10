@@ -22,15 +22,23 @@
 #       install.packages(c("tidyverse", "ggthemes"))
 # 
 # To use the program:
-#       1. Source all of the code from this file. There are multiple ways, but
+#       1. Ensure the you have the necessary libraries installed. See note above
+#               for instructions on installing libraries.
+#       2. Copy the chip layout file (e.g., "groupNames_XPP.csv") into the 
+#               directory containing the raw ring data.
+#               Note: This program has the highest chance of success if the
+#               directoy only contains:
+#                       1. raw ring data files (e.g., "03.csv") and
+#                       2. the chip layout file (e.g., "groupNames_XPP.csv")
+#       3. Source all of the code from this file. There are multiple ways, but
 #               one method is to click the `Source` button on the window of the 
 #               Source Console in RStudio after opening this file in RStudio.
 #               
-#       2. Set the working directory to the folder containing the raw data and
+#       4. Set the working directory to the folder containing the raw data and
 #              chip layout for example:
 #              setwd("C:/Users/USERNAME/Documents/CHIPNAME_gaskGASK_DATE")
 #              
-#       3. Execute the code by running the AnalyzeData function. This function
+#       5. Execute the code by running the AnalyzeData function. This function
 #               requires 5 input variable:
 #                       1. filename - the name of the chip layout file
 #                       2. loc - the name of folder to store generated files
@@ -41,6 +49,11 @@
 #                       5. time2 - the earlier time for net shift measurments
 #               Note: to calculate net shift measurements, the relative shift
 #               at time2 is subtracted from time1 (netshift = time1 - time2).
+#               Here is an example of code to run:
+#                      AnalyzeData(filename = "groupNames_XPP.csv", 
+#                                  time1 = 51, time2 = 39,
+#                                  loc = "plots",
+#                                  fsr = FALSE)
 #
 ################################################################################
 
